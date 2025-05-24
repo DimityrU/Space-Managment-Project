@@ -1,0 +1,227 @@
+body {
+    overflow-x: hidden;
+}
+
+.invoice-container {
+    background-color: #fff;
+    min-width: 45%;
+    width: fit-content;
+    margin-inline: auto;
+    margin-block: 2rem;
+    padding: 2rem;
+}
+
+.invoice {
+    border: 2px solid black;
+    padding: 2rem;
+    width: fit-content;
+}
+
+.invoice-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 3rem;
+    gap: .5rem;
+    width: 100%;
+}
+
+.invoice-header p {
+    font-size: 1.2rem;
+}
+
+.itallic {
+    font-style: italic;
+    font-weight: 400;
+}
+
+.bold {
+    font-weight: 600;
+}
+
+.invoice-header h2 {
+    font-size: 1.7rem;
+}
+
+.invoice-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    font-weight: 600;
+    margin-bottom: 3rem;
+    gap: .2rem;
+}
+
+.invoice-info input {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.invoice-header input {
+    font-size: 1.5rem;
+    max-width: 30%;
+}
+
+.invoice-participants {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+}
+
+.invoice-client,
+.invoice-vendor {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    gap: .2rem;
+}
+
+.invoice-client h2,
+.invoice-vendor h2 {
+    font-size: 1.3rem;
+    margin-bottom: .3rem;
+}
+
+.invoice-client label,
+.invoice-vendor label {
+    flex: 1;
+}
+
+.invoice-client input,
+.invoice-vendor input {
+    font-size: 1rem;
+    flex: 1;
+}
+
+.custom-table {
+    font-size: 1rem;
+    border: none;
+    border: 2px solid rgb(178, 178, 178);
+}
+
+.custom-table tbody {
+    overflow-y: auto !important;
+}
+
+.custom-table thead tr {
+    color: #fff;
+    background-color: rgb(178, 178, 178);
+    padding: 0;
+}
+
+.custom-table tbody tr {
+    background-color: #fff;
+    color: black;
+}
+
+.custom-table tr:nth-of-type(2n) {
+    background-color: #dadada;
+}
+
+.custom-table td,
+.custom-table th {
+    border-right: 2px solid rgb(178, 178, 178);
+}
+
+.tw-1,
+.tw-2,
+.tw-3,
+.tw-4,
+.tw-5,
+.tw-6 {
+    text-align: center;
+}
+
+.tw-1 {
+    width: 25%;
+}
+
+.tw-2 {
+    width: 15%;
+}
+
+.tw-3 {
+    width: 15%;
+}
+
+.tw-4 {
+    width: 15%;
+}
+
+.tw-5 {
+    width: 15%;
+}
+
+.tw-6 {
+    width: 15%;
+}
+
+.count-input {
+    max-width: 100%;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.count-input {
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+
+.count-input::-webkit-inner-spin-button,
+.count-input::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.removed td {
+    opacity: .4;
+}
+
+.removed td:last-of-type {
+    opacity: 1;
+}
+
+.clickable {
+    scale: 1.2;
+    cursor: pointer;
+    opacity: 1 !important;
+}
+
+.delete:hover {
+    color: rgb(147, 0, 0) !important;
+}
+
+.return:hover {
+    color: #02856f;
+}
+
+.invoice-total {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: auto;
+    width: fit-content;
+    font-weight: 600;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+    gap: .3rem;
+}
+
+.invoice-total label {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    width: 100%;
+}
+
+.border-btm {
+    border-bottom: 2px solid #000000;
+    width: 100%;
+}
+
+.btn-custom {
+    font-size: 1rem;
+}

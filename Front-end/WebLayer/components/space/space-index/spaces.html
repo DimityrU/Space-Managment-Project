@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="../../../assets/images/icons8-building-16.png" />
+    <link rel="stylesheet" href="../../../assets/styles/styles.css" />
+    <link rel="stylesheet" href="./spaces.css" />
+
+    <title>Помещения</title>
+  </head>
+  <body>
+    <div class="spaces-body blur">
+      <div class="filters-container">
+        <label for="spaceName">Помещение:</label>
+        <input class="custom-input" type="text" id="spaceName" name="spaceName" placeholder="'Зала Варна'">
+    
+        <label for="spaceSizeMin">Минимална Площ:</label>
+        <input class="custom-input" type="number" id="spaceSizeMin" name="spaceSizeMin" placeholder="Всички">
+
+        <label for="spaceSizeMax">Максимална Площ:</label>
+        <input class="custom-input" type="number" id="spaceSizeMax" name="spaceSizeMax" placeholder="Всички">
+
+        <label for="spaceVolumeMin">Минимален Обем:</label>
+        <input class="custom-input" type="number" id="spaceVolumeMin" name="spaceVolumeMin" placeholder="Всички">
+    
+        <label for="spaceVolumeMax">Максимален Обем:</label>
+        <input class="custom-input" type="number" id="spaceVolumeMax" name="spaceVolumeMax" placeholder="Всички">
+
+        <button class="filter">Филтрирай</button>
+    </div>
+    <a href="../space-add/create-space.html" class="btn-custom add-space">Ново помещение</a>
+      <div class="spaces-container">
+          <table class="custom-table">
+              <thead>
+                <tr>
+                  <th class="tw-1">Име
+                    <span class="material-symbols-outlined name-sort ascending active">arrow_drop_down</span>
+                  </th>
+                  <th class="tw-2">Площ
+                    <span class="material-symbols-outlined size-sort ascending">arrow_drop_down</span>
+                  </th>
+                  <th class="tw-3">Обем
+                    <span class="material-symbols-outlined volume-sort ascending">arrow_drop_down</span>
+                  </th>
+                  <th class="tw-4">Опции</th>
+                </tr>
+              </thead>
+              <tbody class="spaces-table-body">
+
+              </tbody>
+          </table>
+      </div>
+    </div>
+    <div class="loader"></div>`
+    <div class="prompt-save"></div>
+<script type="module" src="spaces.js" defer></script>
+</body>
+</html>

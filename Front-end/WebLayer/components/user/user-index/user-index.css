@@ -1,0 +1,54 @@
+.sm-container {
+    width: 40%;
+    min-width: fit-content;
+    margin-inline: auto;
+    border: 2px solid var(--dark-accent);
+    margin-top: 5rem;
+}
+
+h1 {
+    width: 100%;
+    background: var(--dark-accent);
+    color: #fff;
+    font-size: 1.3rem;
+    text-align: center;
+    padding: 1rem 2rem;
+}
+
+.sm-container div {
+    width: 100%;
+    border-bottom: 2px solid var(--dark-accent);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: fit-content;
+    padding: 1rem 5%;
+}
+
+.sm-container div p {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.delete {
+    scale: 1.3;
+}
+
+.delete:hover {
+    color: rgb(147, 0, 0) !important;
+    cursor: pointer;
+}
+
+.delete:active {
+    scale: 1.4;
+}
+
+.logged-user {
+    color: var(--dark-accent);
+}
+
+.user-name {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

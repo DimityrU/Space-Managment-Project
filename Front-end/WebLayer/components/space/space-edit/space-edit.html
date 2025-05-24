@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="../../../assets/images/icons8-building-16.png"
+    />
+    <link rel="stylesheet" href="../../../assets/styles/styles.css" />
+    <link rel="stylesheet" href="space-edit.css" />
+    <script type="module" src="space-edit.js" defer></script>
+    <title>Промяна на помещение</title>
+  </head>
+  <body>
+    <form id="newOfficeForm" class="officeForm blur">
+      <div class="content-container">
+        <h1>Промени помещение</h1>
+        <div class="form-container">
+          <div class="input-field">
+            <label for="officeName">Наименование на помещение:</label>
+            <input
+              type="text"
+              id="officeName"
+              name="officeName"
+              class="custom-input"
+            />
+          </div>
+
+          <div class="flex-row">
+            <div class="input-field">
+              <label for="officeSize">Размер / m&sup2;:</label>
+              <input
+                type="text"
+                id="officeSize"
+                name="officeSize"
+                class="custom-input"
+              />
+            </div>
+
+            <div class="input-field">
+              <label for="officeVolume">Обем / m&sup3;:</label>
+              <input
+                type="text"
+                id="officeVolume"
+                name="officeVolume"
+                class="custom-input"
+              />
+            </div>
+          </div>
+
+          <div>
+            <div class="input-field">
+              <label for="officeDescription">Описание:</label>
+              <textarea
+                id="officeDescription"
+                rows="10"
+                name="officeDescription"
+                class="custom-textarea"
+              ></textarea>
+            </div>
+
+            <button class="add-new btn-custom">+ Добави консуматив</button>
+            <table class="custom-table">
+              <thead>
+                <tr>
+                  <th class="tw-1">Консуматив</th>
+                  <th class="tw-2">Брой</th>
+                  <th class="tw-3">Редакция</th>
+                </tr>
+              </thead>
+              <tbody class="input-consumables"></tbody>
+            </table>
+
+            <div class="createButton">
+              <button type="submit" class="save-changes btn-custom">
+                Запази
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+    <div class="loader"></div>
+    <div class="prompt-save"></div>
+  </body>
+</html>

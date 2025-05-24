@@ -1,0 +1,97 @@
+body {
+    font-family: var(--ff-sofia);
+    padding: 20px;
+    background-color: #ffffff;
+    text-align: center;
+}
+
+h1 {
+    width: 100%;
+    color: #ffffff;
+    background-color: var(--dark-accent);
+    font-size: 1.4rem;
+    margin-bottom: 2rem;
+}
+
+label {
+    text-align: left;
+    font-size: 1rem !important;
+}
+
+input,
+select,
+textarea {
+    font-size: 1rem !important;
+}
+
+.content-container h1 {
+    padding: 1.5rem;
+}
+
+.client-form {
+    background: #fff;
+    border: 2px solid var(--dark-accent);
+    width: 38%;
+    min-width: fit-content;
+    margin: 2rem auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-container {
+    padding: 1.5rem 3rem;
+}
+
+.input-field {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.input-field label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+.flex-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+}
+
+.flex-row .input-field {
+    width: 45%;
+}
+
+.createButton {
+    display: flex;
+    justify-content: center;
+    margin: 40px 0;
+}
+
+.submit-button-style {
+    padding: 8px 16px;
+    text-align: center;
+    display: inline-block;
+    margin: 4px 2px;
+    cursor: pointer;
+    width: 50%;
+}
+
+.content-container textarea {
+    height: 120px;
+}
+
+.content-container label {
+    font-size: 1.3rem;
+    color: #000000;
+}
+
+.btn-custom {
+    font-size: .9rem !important;
+}
+
+.custom-input{
+    margin-bottom: 1rem;
+}

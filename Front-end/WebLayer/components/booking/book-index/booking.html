@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../../assets/styles/styles.css">
+    <link rel="stylesheet" href="./booking.css">
+    <link rel="icon" type="image/x-icon" href="../../../assets/images/icons8-open-book-16.png" />
+    <title>Резервации</title>
+</head>
+<body>
+    <div class="page-container blur">
+    <div class="filters-container">
+        <label for="startDate">Начална Дата:</label>
+        <input class="custom-input" type="date" id="startDate" name="startDate">
+    
+        <label for="endDate">Крайна Дата:</label>
+        <input class="custom-input" type="date" id="endDate" name="endDate">
+    
+        <label for="spaceName">Име на Помещение:</label>
+        <input class="custom-input" type="text" id="spaceName" name="spaceName">
+    
+        <label for="clientName">Име на Клиент:</label>
+        <input class="custom-input" type="text" id="clientName" name="clientName">
+    
+        <button class="filter">Филтрирай</button>
+    </div>
+    <div class="bookings-container">
+        <table class="custom-table">
+            <thead>
+              <tr>
+                <th class="tw-1">Помещение
+                  <span class="material-symbols-outlined spaceName-sort ascending active">arrow_drop_down</span>
+                </th>
+                <th class="tw-2">Клиент
+                  <span class="material-symbols-outlined clientName-sort ascending">arrow_drop_down</span>
+                </th>
+                <th class="tw-3">Начална Дата
+                  <span class="material-symbols-outlined startDate-sort ascending">arrow_drop_down</span>
+                </th>
+                <th class="tw-4">Крайна Дата
+                    <span class="material-symbols-outlined endDate-sort ascending">arrow_drop_down</span>
+                </th>
+                <th class="tw-5">Цена
+                    <span class="material-symbols-outlined price-sort ascending">arrow_drop_down</span>
+                </th>
+                <th class="tw-6">Опции</th>
+              </tr>
+            </thead>
+            <tbody class="bookings-table-body">
+
+            </tbody>
+          </table>
+    </div>
+    </div>
+        <div class="loader"></div>
+        <div class="prompt-save"></div>
+    <script type="module" defer src="./booking.js"></script>
+</body>
+</html>

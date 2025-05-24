@@ -1,0 +1,150 @@
+* {
+    font-family: var(--ff-sofia);
+    box-sizing: border-box;
+    padding: 0%;
+    margin: 0%;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+h1 {
+    font-size: 30px;
+}
+
+h2 {
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+.details-container {
+    margin: 4rem;
+    margin-left: auto;
+    margin-right: auto;
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 1rem;
+    border: 2px solid var(--dark-accent);
+    width: fit-content;
+    min-width: 50%;
+    max-width: 55%;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+}
+
+.details-span p {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.details-name {
+    border-bottom: 3px solid var(--dark-accent);
+}
+
+.description {
+    margin-bottom: 2rem;
+    padding-right: .5rem;
+    font-size: 1rem;
+}
+
+.consumables {
+    margin-block: 2rem;
+}
+
+.description h3 {
+    margin-bottom: 2rem;
+}
+
+.details-description {
+    font-weight: 400 !important;
+    font-size: 1rem !important;
+}
+
+.mtop-2 {
+    margin-top: 2rem;
+    border-left: 3px solid var(--dark-accent);
+    padding-left: .5rem;
+}
+
+.custom-table {
+    max-width: 100% !important;
+    min-width: 300px;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.custom-table tr {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.custom-table td,
+.custom-table th {
+    padding: .5rem;
+    width: 50%;
+    text-align: center;
+    border-right: 2px solid var(--dark-accent);
+    font-size: 1rem !important;
+}
+
+.tb-sd,
+.tb-ed,
+.tb-p,
+.tb-c {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.custom-table thead tr {
+    padding-right: 0 !important;
+}
+
+.custom-table tbody {
+    overflow-y: visible;
+    overflow-x: visible;
+}
+
+.consumables {
+    max-width: 50% !important;
+}
+
+.back {
+    max-width: 30%;
+    text-align: center;
+    padding-inline: 0rem;
+    font-size: 1rem !important;
+}
+
+.startDate-sort,
+.endDate-sort,
+.price-sort,
+.clientName-sort {
+    transform: rotate(180deg);
+    transition: transform 0.3s ease;
+    scale: 1.5;
+    color: rgb(112, 112, 112);
+    user-select: none;
+}
+
+.active {
+    color: #ffffff;
+}
+
+.startDate-sort:hover,
+.endDate-sort:hover,
+.price-sort:hover,
+.clientName-sort:hover {
+    cursor: pointer;
+}
+
+.material-symbols-outlined {
+    user-select: none;
+    cursor: pointer;
+}
+
+.ascending {
+    transform: rotate(360deg);
+    transition: transform 0.3s ease;
+}

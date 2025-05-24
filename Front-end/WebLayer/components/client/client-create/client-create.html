@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Добави нов клиент</title>
+    <link rel="icon" type="image/x-icon" href="../../../assets/images/icons8-person-16.png" />
+    <link rel="stylesheet" type="text/css" href="client-create.css" />
+    <link rel="stylesheet" type="text/css" href="../../../assets/styles/styles.css"/>
+</head>
+<body>
+    <form id="newClientForm" class="client-form blur">
+        <div class="content-container">
+          <h1>Добави нов клиент</h1>
+          <div class="form-container">
+          <div class="input-field">
+            <label for="client-name">Име на клиент:</label>
+            <input type="text" id="client-name" name="client-name" class="custom-input"/>
+          </div>
+
+          <div class="flex-row">
+            <div class="input-field">
+              <label for="pin-number">ЕГН/ПИН:</label>
+              <input type="text" id="pin-number" name="pin-number" class="custom-input"/>
+            </div>
+
+            <div class="input-field">
+              <label for="phone-number">Тел. номер:</label>
+              <input type="text" id="phone-number" name="phone-number" class="custom-input"/>
+            </div>
+          </div>
+
+          <div class="input-field">
+              <label for="e-mail">Имейл:</label>
+              <input type="text" id="e-mail" name="e-mail" class="custom-input"/>
+          </div>
+
+          <div class="createButton">
+            <button type="submit" class="submit-button-style btn-custom">Запази</button>
+          </div>
+          </div>
+        </div>
+      </form>
+    <div class="loader"></div>
+    <div class="prompt-save"></div>
+    <script type="module" defer src="./client-create.js"></script>
+</body>
+</html>

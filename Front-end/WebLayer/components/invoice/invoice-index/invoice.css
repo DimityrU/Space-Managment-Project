@@ -1,0 +1,153 @@
+.page-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.filters-container {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  margin-left: 2rem;
+  margin-block: 3rem;
+  border: 2px solid var(--dark-accent);
+  padding: 0.5rem 1rem;
+  height: fit-content;
+  background-color: var(--dark-accent);
+  color: var(--light-accent);
+}
+
+.filters-container input {
+  margin-bottom: 0.5rem;
+}
+
+.filter {
+  background-color: var(--dark-accent);
+  align-self: center;
+  font-size: 1rem;
+  color: var(--light-accent);
+  border: 3px solid var(--light-accent);
+  padding: 0.2rem 0.5rem;
+  font-weight: 600;
+  margin-top: 0.5rem;
+  text-decoration: none;
+}
+
+.filter:hover {
+  cursor: pointer;
+  background-color: var(--light-accent);
+  color: var(--dark-accent);
+}
+
+.filter:active {
+  scale: 0.97;
+}
+
+.paid-filter {
+  display: flex;
+  margin: 0.5rem 0rem 0.5rem 0rem !important;
+}
+
+.paid-checkbox {
+  margin-bottom: 0px !important;
+  margin-right: 0.5rem;
+}
+
+.invoices-container {
+  width: 70%;
+  margin-inline: auto;
+  margin-block: 3rem;
+}
+
+.custom-table {
+  font-size: 1rem;
+}
+
+.custom-table tr th {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.custom-table tbody {
+  max-height: 500px;
+  overflow-y: scroll;
+}
+
+.tw-1 {
+  width: 13%;
+}
+
+.tw-2 {
+  width: 15%;
+}
+
+.tw-3 {
+  width: 21%;
+}
+
+.tw-4 {
+  width: 21%;
+}
+
+.tw-5 {
+  width: 15%;
+}
+
+.tw-6 {
+  width: 15%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.spaceName-sort,
+.clientName-sort,
+.amount-sort,
+.createdAt-sort,
+.invoiceNumber-sort {
+  transform: rotate(180deg);
+  transition: transform 0.3s ease;
+  scale: 1.5;
+  color: rgb(112, 112, 112);
+  user-select: none;
+}
+
+.invoiceNumber-sort:hover,
+.spaceName-sort:hover,
+.clientName-sort:hover,
+.amount-sort:hover,
+.createdAt-sort:hover,
+.clickable:hover {
+  cursor: pointer;
+  user-select: none;
+}
+
+.active {
+  color: #ffffff;
+}
+
+.ascending {
+  transform: rotate(360deg);
+  transition: transform 0.3s ease;
+}
+
+.clickable {
+  scale: 1.4;
+  opacity: 0.6;
+}
+
+.delete-invoice:hover {
+  color: rgb(147, 0, 0);
+  opacity: 1;
+}
+
+.invoice-detail:hover {
+  cursor: pointer;
+  opacity: 0.4;
+  color: var(--dark-accent);
+}
+
+.pay-invoice:hover {
+  color: #02856f;
+  opacity: 1;
+}

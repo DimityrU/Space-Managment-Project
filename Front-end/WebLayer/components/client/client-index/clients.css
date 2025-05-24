@@ -1,0 +1,146 @@
+.page-container {
+  display: grid;
+  grid-template-columns: .5fr 4fr;
+  grid-template-rows: repeat(2, auto);
+  }
+  
+  .filters-container {
+    grid-row-start: 2;
+    grid-column-start: 1;
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    margin-left: 2rem;
+    border: 2px solid var(--dark-accent);
+    padding: .5rem 1rem;
+    height: fit-content;
+    background-color: var(--dark-accent);
+    color: var(--light-accent);
+  }
+  
+  .filters-container input {
+    margin-bottom: 0.5rem;
+  }
+  
+  .filter {
+    background-color: var(--dark-accent);
+    align-self: center;
+    font-size: 1rem;
+    color: var(--light-accent);
+    border: 3px solid var(--light-accent);
+    padding: 0.2rem 0.5rem;
+    font-weight: 600;
+    margin-top: 0.5rem;
+    text-decoration: none;
+  }
+  
+  .filter:hover {
+    cursor: pointer;
+    background-color: var(--light-accent);
+    color: var(--dark-accent);
+  }
+  
+  .filter:active {
+    scale: 0.97;
+  }
+  
+  .clients-container {
+    margin-inline: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 70%;
+    grid-row-start: 2;
+    grid-column-start: 2;
+  }
+  
+  .custom-table {
+    font-size: 1rem;
+  }
+  
+  .custom-table tr th {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .custom-table tbody {
+    max-height: 500px;
+    overflow-y: scroll;
+  }
+  
+  .tw-1 {
+    width: 27.5%;
+  }
+  
+  .tw-2 {
+    width: 17.5%;
+  }
+  
+  .tw-3 {
+    width: 15%;
+  }
+  
+  .tw-4 {
+    width: 25%;
+  }
+    
+  .tw-5 {
+    width: 15%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  
+  .name-sort,
+  .pin-sort,
+  .phoneNumber-sort,
+  .email-sort {
+    transform: rotate(180deg);
+    transition: transform 0.3s ease;
+    scale: 1.5;
+    color: rgb(112, 112, 112);
+    user-select: none;
+  }
+  
+  .name-sort:hover,
+  .pin-sort:hover,
+  .phoneNumber-sort:hover,
+  .email-sort:hover,
+  .clickable:hover {
+    cursor: pointer;
+    user-select: none;
+  }
+  
+  .active {
+    color: #ffffff;
+  }
+  
+  .ascending {
+    transform: rotate(360deg);
+    transition: transform 0.3s ease;
+  }
+  
+  .clickable {
+    scale: 1.4;
+    opacity: 0.6;
+  }
+  
+  .edit-client:hover {
+    color: #02856f;
+    opacity: 1;
+  }
+  
+  .delete-client:hover {
+    color: rgb(147, 0, 0);
+    opacity: 1;
+  }
+
+  .add-client{
+    grid-row-start: 1;
+    grid-column-start: 2;
+    width: 20%;
+    text-align: center;
+    margin-left: 15%;
+    font-size: 1rem;
+  }

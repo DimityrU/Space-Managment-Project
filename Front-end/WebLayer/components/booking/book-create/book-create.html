@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8" />
+
+  <script src="book-create.js" type="module" async defer></script>
+
+  <link rel="stylesheet" href="../../../assets/styles/styles.css" />
+  <link rel="stylesheet" href="./book-create.css" />
+  <link rel="icon" type="image/x-icon" href="../../../assets/images/icons8-open-book-16.png" />
+  <title>Резервиране на помещение</title>
+</head>
+<body>
+  <form id="create-booking" class="booking-form">
+    <div class="headline">
+      <h1>Резервация</h1>
+    </div>
+    <div class="details-container">
+      <div class="space-details">
+        <span class="details-span">
+          <p class="details-label">Помещение:</p>
+          <p class="details-name">Име</p>
+        </span>
+        <span class="details-span">
+          <p class="details-label">Площ:</p>
+          <p class="details-size">100</p>
+        </span>
+        <span class="details-span">
+          <p class="details-label">Обем:</p>
+          <p class="details-volume">300</p>
+        </span>
+      </div>
+      <div class="booking-dates">
+        <span class="details-span">
+          <p class="details-label">Начална дата:</p>
+          <p class="booking-start-date">01-01-2020</p>
+        </span>
+        <span class="details-span">
+          <p class="details-label">Крайна дата:</p>
+          <p class="booking-end-date">01-01-2020</p>
+        </span>
+      </div>
+    </div>
+    <div class="details-input">
+        <label for="booking-price">Цена на наем:
+          <input
+          id="booking-price"
+          name="booking-price"
+          class="input-field custom-input"
+          type="number"
+          step="any"
+          min="0"
+          value="0"
+          />
+        </label>
+        <label for="client-select">Изберете клиент:        
+          <select
+          id="client-select"
+          name="client-select"
+          class="custom-select"
+          ></select>
+        </label>
+        <!-- <button type="" class="btn-custom" title="Създай нов клиент">+</button> -->
+    </div>
+      <button id="submit-btn" type="submit" class="btn-custom">
+        Резервирай помещение
+      </button>
+  </form>
+  <button class="btn-custom back">Назад</button>
+  <div class="prompt-save"></div>
+</body>

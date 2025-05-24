@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8" />
+
+  <script src="book-filter.js" type="module" async defer></script>
+
+  <link rel="stylesheet" href="../../../assets/styles/styles.css" />
+  <link rel="stylesheet" href="./book-filter.css" />
+  <link rel="icon" type="image/x-icon" href="../../../assets/images/icons8-open-book-16.png" />
+  <title>Търсене на свободни помещения</title>
+</head>
+<body>
+  <form id="booking-form" class="filter-form blur">
+    <div class="headline">
+      <h1>Търсене на свободно помещение</h1>
+    </div>
+    <div class="content-container">
+      <div id="data-filter" class="flex-row">
+        <div class="input-field">
+          <label for="start-date">Начална дата:</label>
+          <input
+            id="start-date"
+            type="date"
+            name="start-date"
+            class="custom-input"
+          />
+        </div>
+        <div class="input-field">
+          <label for="end-date">Крайна дата:</label>
+          <input
+            id="end-date"
+            type="date"
+            name="end-date"
+            class="custom-input"
+          />
+        </div>
+        <div class="input-field">
+          <label>Площ / m&sup2;:</label>
+          <div class="size-inputs">
+            <input
+              id="min-size"
+              type="number"
+              class="custom-input size-field"
+              step="any"
+              min="0"
+              name="space-size"
+              placeholder="min"
+            />
+            <input
+              id="max-size"
+              type="number"
+              class="custom-input size-field"
+              step="any"
+              min="0"
+              name="space-size"
+              placeholder="max"
+            />
+          </div>
+        </div>
+        <div class="input-field">
+          <label for="space-volume">Обем / m&sup3;:</label>
+          <div class="size-inputs">
+            <input
+              id="min-volume"
+              type="number"
+              class="custom-input size-field"
+              step="any"
+              min="0"
+              name="space-volume"
+              placeholder="min"
+            />
+            <input
+              id="max-volume"
+              type="number"
+              class="custom-input size-field"
+              step="any"
+              min="0"
+              name="space-volume"
+              placeholder="max"
+            />
+          </div>
+        </div>
+        <button
+          id="search-button"
+          type="button"
+          class="search-button-style btn-custom"
+        >
+          Потърси
+        </button>
+      </div>
+
+      <div class="spaces-container">
+        <table id="spaces-table" class="spaces-table">
+          <thead>
+            <tr>
+              <th class="tw-1">Име</th>
+              <th class="tw-2">Площ</th>
+              <th class="tw-3">Обем</th>
+              <th class="tw-4">Действие</th>
+            </tr>
+          </thead>
+          <tbody class="spaces-table-body"></tbody>
+        </table>
+      </div>
+    </div>
+  </form>
+  <button class="btn-custom back">Назад</button>
+  <div class="prompt-save"></div>
+  <div class="loader"></div>
+</body>

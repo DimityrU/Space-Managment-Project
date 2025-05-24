@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="../../../assets/images/icons8-document-16.png" />
+    <link rel="stylesheet" type="text/css" href="../../../assets/styles/styles.css"/>
+    <link rel="stylesheet" href="./invoice-details.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
+    <script type="text/javascript" src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
+    </script>
+    <title>Фактура-детайли</title>
+</head>
+<body>
+    <div class="invoice-container blur">
+        <form action="post" class="invoice">
+            
+            <div class="invoice-header">
+                <h2>Фактура № <span id="invoice-number"></span></h2>
+                <p>Оригинал</p>
+            </div>
+            
+            <div class="invoice-info">
+                <label for="invoice-created">Дата на издаване:
+                    <p id="invoice-created" class="text-style"></p>
+                </label>
+                <label for="invoice-period">Период:
+                    <p id="invoice-period" class="text-style"></p>
+                </label>
+                <label for="invoice-space">Помещение:
+                    <p id="invoice-space" class="text-style"></p>
+                </label>
+            </div>
+            
+            <div class="invoice-participants">
+                <div class="invoice-client">
+                    <h2>Получател</h2>
+                    <label class="bold">Име на Клиента:
+                        <p id="client-name" class="text-style"></p>
+                    </label>
+                    <label class="bold" for="invoice-clientPIN" id="clientPINLabel">ПИН на Клиента:
+                        <p id="invoice-clientPIN" class="text-style"></p>
+                    </label>
+                </div>
+            </div>
+
+            <div class="table">
+                <table class="custom-table">
+                    <thead>
+                        <tr>
+                            <th class="tw-1">Консуматив</th>
+                            <th class="tw-2">Брой</th>
+                            <th class="tw-3">Ед. Цена</th>
+                            <th class="tw-4">ДДС: 20%</th>
+                            <th class="tw-5">Стойност</th>
+                        </tr>
+                    </thead>
+                    <tbody id="invoice-consumables">
+                        
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="invoice-total">
+                <label for="invoice-rent">
+                    Наем:
+                    <p id="invoice-rent"></p>
+                </label>
+                <label for="invoice-consumable-total" class="border-btm">
+                    Консумативи:
+                    <p id="invoice-consumable-total"></p>
+                </label>
+                <label for="invoice-total">
+                    Без ДДС:
+                    <p id="invoice-total"></p>
+                </label>
+                <label class="border-btm" for="invoice-total-vat">
+                    ДДС:
+                    <p id="invoice-total-vat"></p>
+                </label>
+                <label for="invoice-total-all">
+                    Общо:
+                    <p id="invoice-total-all"></p>
+                </label>
+            </div>
+        </form>
+        <button class="create-invoice btn-custom">Изтегли <span class="material-symbols-outlined">
+            download
+        </span></button>
+    </div>    
+    <div class="loader"></div>
+    <div class="prompt-save"></div>
+    <script type="module" defer src="./invoice-details.js"></script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="../../../assets/images/icons8-person-16.png" />
+    <link rel="stylesheet" href="../../../assets/styles/styles.css">
+    <link rel="stylesheet" href="./clients.css">
+    <title>Клиенти</title>
+</head>
+<body>
+    <div class="page-container blur">
+    <div class="filters-container">
+        <label for="name">Име</label>
+        <input class="custom-input" type="text" id="name" name="name" placeholder="Име на клиента">
+    
+        <label for="pin">ЕГН/ЕИК:</label>
+        <input class="custom-input" type="number" id="pin" name="pin" placeholder="ЕГН/ЕИК на клиента">
+
+        <label for="phoneNumber">Телефонен номер:</label>
+        <input class="custom-input" type="number" id="phoneNumber" name="phoneNumber" placeholder="Номер на клиента">
+    
+        <label for="email">Имейл:</label>
+        <input class="custom-input" type="text" id="email" name="email" placeholder="Имейл на клиента">
+        
+        <button class="filter">Филтрирай</button>
+    </div>
+    <a href="../client-create/client-create.html" class="btn-custom add-client">Нов клиент</a>
+    <div class="clients-container">
+        <table class="custom-table">
+            <thead>
+              <tr>
+                <th class="tw-1">Име
+                  <span class="material-symbols-outlined name-sort ascending active">arrow_drop_down</span>
+                </th>
+                <th class="tw-2">ЕГН/ЕИК
+                  <span class="material-symbols-outlined pin-sort ascending">arrow_drop_down</span>
+                </th>
+                <th class="tw-3">Телефон
+                  <span class="material-symbols-outlined phoneNumber-sort ascending">arrow_drop_down</span>
+                </th>
+                <th class="tw-4">Имейл
+                    <span class="material-symbols-outlined email-sort ascending">arrow_drop_down</span>
+                </th>
+                <th class="tw-5">Опции</th>
+              </tr>
+            </thead>
+            <tbody class="bookings-table-body">
+
+            </tbody>
+          </table>
+    </div>
+    </div>
+        <div class="loader"></div>
+        <div class="prompt-save"></div>
+    <script type="module" defer src="./clients.js"></script>
+</body>
+</html>

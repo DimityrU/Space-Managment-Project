@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="../../../assets/styles/styles.css"/>
+    <link rel="stylesheet" href="./space-details.css"/>
+    <link rel="icon" type="image/x-icon" href="../../../assets/images/icons8-building-16.png" />
+    <title>Офис детайли</title>
+</head>
+<body >
+    <div class="details-container blur">
+        <h1 class="details-name column-2">Офис</h1>
+        <span class="details-span">
+        <p>Площ</p>
+        <h2 class="details-size">100</h2>
+        </span>
+        <span class="details-span">
+        <p>Обем</p>
+        <h2 class="details-volume">300</h2>
+        </span>
+        <span class="details-span column-2 mtop-2 description">
+        <h3>Описание</h3>
+        <p class="details-description">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Blanditiis consequuntur harum adipisci reprehenderit sapiente? Commodi, recusandae vitae voluptate soluta doloribus alias autem placeat quas impedit eos nam molestias magni nihil?</p>
+        </span>
+        <table class="custom-table consumables column-2">
+            <thead>
+              <tr>
+                <th>Консуматив</th>
+                <th>Брой</th>
+              </tr>
+            </thead>
+            <tbody class="details-consumables">
+
+            </tbody>
+          </table>
+
+          <table class="custom-table bookings column-2">
+            <thead>
+              <tr>
+                <th class="tb-sd">Начална дата
+                  <span class="material-symbols-outlined startDate-sort ascending active">arrow_drop_down</span>
+                </th>
+                <th class="tb-ed">Крайна дата
+                  <span class="material-symbols-outlined endDate-sort ascending">arrow_drop_down</span>
+                </th>
+                <th class="tb-p">Цена
+                  <span class="material-symbols-outlined price-sort ascending">arrow_drop_down</span>
+                </th>
+                <th class="tb-c">Клиент
+                  <span class="material-symbols-outlined clientName-sort ascending">arrow_drop_down</span>
+                </th>
+              </tr>
+            </thead>
+            <tbody class="details-bookings">
+
+            </tbody>
+          </table>
+          <button class='btn-custom back'>Назад</button>
+    </div>
+    <div class="loader"></div>
+    <div class="prompt-save"></div>
+<script type="module" src="./space-details.js" defer></script>
+</body>
+</html>

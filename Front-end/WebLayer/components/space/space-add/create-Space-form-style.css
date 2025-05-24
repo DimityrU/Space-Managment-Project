@@ -1,0 +1,144 @@
+body {
+    font-family: var(--ff-sofia);
+    padding: 20px;
+    background-color: #ffffff;
+    text-align: center;
+    overflow-x: hidden;
+}
+
+h1 {
+    width: 100%;
+    color: #ffffff;
+    background-color: var(--dark-accent);
+    font-size: 1.4rem;
+    margin-bottom: 2rem;
+}
+
+label {
+    text-align: left;
+    font-size: 1rem !important;
+}
+
+input,
+select,
+textarea {
+    font-size: 1rem !important;
+}
+
+.content-container h1 {
+    padding: 1.5rem;
+}
+
+.officeForm {
+    background: #fff;
+    border: 2px solid var(--dark-accent);
+    width: 38%;
+    margin: 2rem auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-container {
+    padding: 1rem 2rem;
+}
+
+.input-field {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.input-field label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+.flex-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+}
+
+.flex-row .input-field {
+    width: 45%;
+}
+
+
+.first-element {
+    flex: 2;
+}
+
+.consumable {
+    font-size: 0.9rem;
+}
+
+.second-element {
+    flex: 1;
+}
+
+.third-element {
+    scale: 1.6;
+    margin-top: .2rem;
+    user-select: none;
+}
+
+.third-element:hover {
+    color: rgb(147, 0, 0);
+}
+
+.addButton {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 5%;
+    color: #000000;
+}
+
+.createButton {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.add-button-style,
+.submit-button-style {
+    padding: 8px 16px;
+    text-align: center;
+    display: inline-block;
+    margin: 4px 2px;
+    cursor: pointer;
+    width: 50%;
+}
+
+.add-button-style {
+    font-size: 1rem !important;
+    font-weight: bold;
+    color: #000000;
+    width: 42.3% !important;
+    padding: .5rem !important;
+}
+
+.material-symbols-outlined {
+    height: fit-content;
+}
+
+.material-symbols-outlined:hover {
+    cursor: pointer;
+}
+
+.material-symbols-outlined:active {
+    scale: 1.5;
+}
+
+.content-container textarea {
+    height: 120px;
+}
+
+.content-container label {
+    font-size: 1.3rem;
+    color: #000000;
+}
+
+.btn-custom {
+    font-size: .9rem !important;
+}

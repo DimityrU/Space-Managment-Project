@@ -1,0 +1,169 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0%;
+    font-family: var(--ff-sofia);
+}
+
+.spaces-body {
+    display: grid;
+    grid-template-columns: .5fr 4fr;
+    grid-template-rows: repeat(2, auto);
+}
+
+.spaces-container {
+    margin-inline: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    grid-row-start: 2;
+    grid-column-start: 2;
+}
+
+.add-space {
+    grid-row-start: 1;
+    grid-column-start: 2;
+    width: 20%;
+    text-align: center;
+    margin-left: 5%;
+    font-size: 1rem;
+}
+
+.filters-container {
+    grid-row-start: 2;
+    grid-column-start: 1;
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    margin-left: 2rem;
+    border: 2px solid var(--dark-accent);
+    padding: .5rem 1rem;
+    height: fit-content;
+    background-color: var(--dark-accent);
+    color: var(--light-accent);
+}
+
+.filters-container input {
+    margin-bottom: .5rem;
+}
+
+.filter {
+    background-color: var(--dark-accent);
+    align-self: center;
+    font-size: 1rem;
+    color: var(--light-accent);
+    border: 3px solid var(--light-accent);
+    padding: .2rem .5rem;
+    font-weight: 600;
+    margin-top: .5rem;
+    text-decoration: none;
+}
+
+.filter:hover {
+    cursor: pointer;
+    background-color: var(--light-accent);
+    color: var(--dark-accent);
+}
+
+.filter:active {
+    scale: .97;
+}
+
+.custom-table {
+    font-size: 1.2rem;
+}
+
+.custom-table tbody {
+    max-height: 500px !important;
+    overflow-y: scroll !important;
+}
+
+.custom-table tbody tr {
+    height: 100%;
+}
+
+.tw-1,
+.tw-2,
+.tw-3,
+.tw-4 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tw-1 {
+    width: 40%;
+}
+
+.tw-2 {
+    width: 20%;
+}
+
+.tw-3 {
+    width: 20%;
+}
+
+.tw-4 {
+    width: 20%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.link-dark {
+    margin-right: .5rem;
+    text-decoration: none;
+    color: #000000;
+}
+
+.link-dark:hover {
+    border-bottom: 3px solid #000000;
+    cursor: pointer;
+}
+
+.size-sort,
+.name-sort,
+.volume-sort {
+    transform: rotate(180deg);
+    transition: transform 0.3s ease;
+    scale: 1.5;
+    color: rgb(112, 112, 112);
+    user-select: none;
+}
+
+.active {
+    color: #ffffff;
+}
+
+.size-sort:hover,
+.name-sort:hover,
+.volume-sort:hover {
+    cursor: pointer;
+}
+
+.material-symbols-outlined {
+    user-select: none;
+    cursor: pointer;
+}
+
+.ascending {
+    transform: rotate(360deg);
+    transition: transform 0.3s ease;
+}
+
+.option {
+    scale: 1.5;
+    opacity: 1;
+}
+
+.option:hover {
+    cursor: pointer;
+    opacity: .4;
+    color: var(--dark-accent);
+}
+
+.edit:hover {
+    color: #02856f;
+    opacity: 1;
+}

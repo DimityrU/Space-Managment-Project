@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Влизане</title>
+  <link rel="stylesheet" type="text/css" href="../../assets/styles/styles.css">
+  <link rel="stylesheet" type="text/css" href="login.css">
+  <link rel="icon" type="image/x-icon" href="../../assets/images/icons8-login-16.png" />
+</head>
+<body>
+  <div class="hero">
+  <div class="container">
+    <div class="logo"></div>
+    <form id="loginForm" class="login">
+      <h2 class="title">Вход</h2>
+      <label for="username">Име</label>
+      <input class="txtbox" type="text" id="username" name="username" placeholder="Въведи име" required>
+      
+      <label for="password">Парола</label>
+      <input class="txtbox" type="password" id="password" name="password" placeholder="Въведи парола" required>
+      <span><input type="checkbox" class="show-password"> Покажи парола</span>
+      <div id="errorComponent"></div>
+        <button class="btn-custom" type="submit">Влез</button>
+      </form>
+  </div>
+</div>
+  <div class="loader"></div>
+  <script src="login.js"></script>
+</body>
+</html>

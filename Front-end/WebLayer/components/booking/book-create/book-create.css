@@ -1,0 +1,141 @@
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-x: hidden;
+}
+
+.booking-form {
+  background: #fff;
+  border: 2px solid var(--dark-accent);
+  width: 45%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.booking-form * {
+  font-size: 1.2rem;
+}
+
+.headline {
+  background-color: var(--dark-accent);
+  width: 100%;
+  padding: 10px;
+}
+
+h1 {
+  text-align: center;
+  color: #fff;
+  font-size: 1.4rem;
+}
+
+.details-input {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 64%;
+  margin: 1rem 1rem;
+  padding: 10px;
+}
+
+.details-input label {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.custom-select,
+.custom-input {
+  font-size: 1.2rem !important;
+  padding: 3px !important;
+  height: fit-content !important;
+  margin: 0px !important;
+  width: 49% !important;
+}
+
+.details-label {
+  font-weight: bold;
+}
+
+.details-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  margin-bottom: 0rem;
+  padding: 2rem;
+}
+
+.space-details,
+.booking-dates {
+  flex-direction: row;
+  margin-bottom: 1rem;
+}
+
+.details-span {
+  display: flex;
+  flex-direction: row;
+}
+
+.input-labels {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-bottom: 5px;
+  font-weight: bold;
+  font-size: 1rem;
+  color: #333;
+}
+
+.input-labels * {
+  margin-bottom: 20px;
+  padding: 10px 0px;
+  font-size: 1rem;
+}
+
+.input-fields {
+  display: flex;
+  flex-direction: column;
+}
+
+#booking-price {
+  text-align: center;
+}
+
+.details-container * {
+  margin-bottom: 0.3rem;
+}
+
+.details-container,
+.input-field {
+  gap: 1rem;
+  width: fit-content;
+  min-width: 20%;
+  max-width: 100%;
+  font-size: 1.6rem;
+}
+
+.input-field {
+  margin-bottom: 1rem;
+}
+
+.btn-custom {
+  font-size: 1rem !important;
+  align-self: center;
+}
+
+#submit-btn {
+  padding: .5rem .3rem;
+  width: 30% !important;
+}
+
+.back {
+  margin-inline: auto;
+}
+
+#client-select {
+  font-size: 1.6rem;
+}

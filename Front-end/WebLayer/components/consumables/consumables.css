@@ -1,0 +1,117 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0%;
+    font-family: var(--ff-sofia);
+}
+
+.consumables-container {
+    margin-block: 3rem;
+    margin-inline: auto;
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 65%;
+}
+
+.custom-table tbody {
+    max-height: 400px !important;
+}
+
+.custom-table thead tr th {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .3rem;
+}
+
+.tw-1 {
+    width: 35%;
+}
+
+.tw-2 {
+    width: 22.5%;
+}
+
+.tw-3 {
+    width: 22.5%;
+}
+
+.tw-4 {
+    width: 25%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.clickable {
+    font-size: 2rem;
+    scale: 1.5;
+    opacity: 1;
+}
+
+.save-context {
+    margin-inline: auto;
+}
+
+.edited {
+    border: 2px solid var(--dark-accent);
+}
+
+.edit:hover {
+    color: #02856f;
+}
+
+.delete:hover {
+    color: rgb(147, 0, 0) !important;
+}
+
+.edit-input {
+    height: 100%;
+    width: 100%;
+    border: none;
+    padding: 0%;
+    margin: 0%;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.create-new {
+    align-self: flex-start;
+    margin-block: 1rem;
+}
+
+.name-sort,
+.price-sort {
+    transform: rotate(180deg);
+    transition: transform 0.3s ease;
+    scale: 1.5;
+    color: rgb(112, 112, 112);
+    user-select: none;
+}
+
+.active {
+    color: #ffffff;
+}
+
+.name-sort:hover,
+.price-sort:hover {
+    cursor: pointer;
+}
+
+.ascending {
+    transform: rotate(360deg);
+    transition: transform 0.3s ease;
+}
+
+@media screen and (max-width:900px) {
+    .consumables-container {
+        width: 90%;
+    }
+
+    table {
+        width: 80%;
+        max-width: 90%;
+    }
+}

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Добави Помещение</title>
+    <script src="CreateSpace.js" type="module" async defer></script> 
+    <link rel="stylesheet" type="text/css" href="create-space-form-style.css" />
+    <link rel="stylesheet" type="text/css" href="../../../assets/styles/styles.css"/>
+    <link rel="icon" type="image/x-icon" href="../../../assets/images/icons8-building-16.png" />
+  </head>
+  <body>
+    <form id="newOfficeForm" class="officeForm blur">
+      <div class="content-container">
+        <h1>Добави ново помещение</h1>
+      <div class="form-container">
+      <div class="input-field">
+        <label for="officeName">Наименование на помещение:</label>
+        <input type="text" id="officeName" name="officeName" class="custom-input"/>
+      </div>
+
+      <div class="flex-row">
+        <div class="input-field">
+          <label for="officeSize">Размер / m&sup2;:</label>
+          <input type="number" id="officeSize" name="officeSize" class="custom-input"/>
+        </div>
+
+        <div class="input-field">
+          <label for="officeVolume">Обем / m&sup3;:</label>
+          <input type="number" id="officeVolume" name="officeVolume" class="custom-input"/>
+        </div>
+      </div>
+
+      <div>
+      <div class="input-field">
+        <label for="officeDescription">Описание:</label>
+        <textarea id="officeDescription" name="officeDescription" class="custom-textarea"></textarea>
+      </div>
+      
+    <div id="extraConsumables">
+      <div class="flex-row removable">
+        <div class="input-field first-element">
+          <label for="consumable">Консуматив:</label>
+          <select id="consumable" name="consumable" class="consumable custom-select" ></select>
+        </div>
+
+        <div class="input-field" class="second-element">
+          <label for="count">Брой:</label>
+          <input type="text" id="count" name="count" class="custom-input input-field"/>
+      </div>
+      <span class="material-symbols-outlined" class="third-element">disabled_by_default</span>
+      </div>
+    </div> 
+      <div class="addButton">
+        <button type="button" class="add-button-style btn-custom" id="addConsumable">
+          + Добави нов консуматив
+        </button>
+      </div>
+      <div class="createButton">
+        <button type="submit" class="submit-button-style btn-custom">Запази</button>
+      </div>
+    </div>
+  </div>
+</div>
+    </form>
+  <div class="loader"></div>
+  <div class="prompt-save"></div>
+  <!-- <button class='btn-custom back'>Назад</button> -->
+  </body>
+</html>
