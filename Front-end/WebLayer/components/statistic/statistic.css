@@ -157,7 +157,16 @@ label[for="year-select"] {
     padding-top: 10px;
 }
 
-.year-dropdown {
+label[for="space-select"] {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-right: 1rem;
+    display: inline-block;
+    margin-bottom: 0.5rem;
+    padding-top: 10px;
+}
+
+.year-dropdown, .space-dropdown {
     padding: 0.5rem;
     font-size: 1rem;
     border: 2px solid var(--dark-accent);
@@ -169,12 +178,17 @@ label[for="year-select"] {
     margin-bottom: 1.5rem;
 }
 
-.year-dropdown:focus {
+.year-dropdown:focus, .space-dropdown:focus {
     outline: none;
     border-color: var(--dark-accent);
 }
 
 .year-dropdown option {
+    background-color: var(--bg-color, #ffffff);
+    color: var(--text-color, #000000);
+}
+
+.space-dropdown option {
     background-color: var(--bg-color, #ffffff);
     color: var(--text-color, #000000);
 }
@@ -189,5 +203,5 @@ label[for="year-select"] {
 }
 
 .stat-button {
-    margin-top: 1px;
+    margin-top: 20px;
 }

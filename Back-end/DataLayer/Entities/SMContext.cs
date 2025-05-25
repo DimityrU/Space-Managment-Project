@@ -34,6 +34,8 @@ public partial class SMContext : DbContext
 
     public virtual DbSet<User> Users { get; set; }
 
+    public virtual DbSet<VBookingStatistic> VBookingStatistics { get; set; }
+
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
         string path = Directory.GetCurrentDirectory();
@@ -54,13 +56,13 @@ public partial class SMContext : DbContext
     {
         modelBuilder.Entity<Booking>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Bookings__3213E83F9FFBEAD0");
+            entity.HasKey(e => e.Id).HasName("PK__Bookings__3213E83F5E733FBD");
 
             entity.Property(e => e.Id).HasDefaultValueSql("(newid())");
 
             entity.HasOne(d => d.Client).WithMany(p => p.Bookings)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__Bookings__client__5BE2A6F2");
+                .HasConstraintName("FK__Bookings__client__4BAC3F29");
 
             entity.HasOne(d => d.Space).WithMany(p => p.Bookings)
                 .OnDelete(DeleteBehavior.ClientSetNull)
@@ -69,14 +71,14 @@ public partial class SMContext : DbContext
 
         modelBuilder.Entity<Client>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Clients__3213E83F939529DA");
+            entity.HasKey(e => e.Id).HasName("PK__Clients__3213E83F4AC15262");
 
             entity.Property(e => e.Id).HasDefaultValueSql("(newid())");
         });
 
         modelBuilder.Entity<Consumable>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Consumab__3213E83F81613B68");
+            entity.HasKey(e => e.Id).HasName("PK__Consumab__3213E83F969D0179");
 
             entity.Property(e => e.Id).HasDefaultValueSql("(newid())");
             entity.Property(e => e.BaseUnit).HasDefaultValueSql("('????')");
@@ -84,7 +86,7 @@ public partial class SMContext : DbContext
 
         modelBuilder.Entity<Invoice>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Invoices__3213E83F4E068D41");
+            entity.HasKey(e => e.Id).HasName("PK__Invoices__3213E83FF514DC1F");
 
             entity.Property(e => e.Id).HasDefaultValueSql("(newid())");
 
@@ -112,13 +114,13 @@ public partial class SMContext : DbContext
 
         modelBuilder.Entity<SpaceConsumable>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Space_co__3213E83F3C82E39F");
+            entity.HasKey(e => e.Id).HasName("PK__Space_co__3213E83FB254986A");
 
             entity.Property(e => e.Id).HasDefaultValueSql("(newid())");
 
             entity.HasOne(d => d.Consumables).WithMany(p => p.SpaceConsumables)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__Space_con__consu__3A81B327");
+                .HasConstraintName("FK__Space_con__consu__4E88ABD4");
 
             entity.HasOne(d => d.Space).WithMany(p => p.SpaceConsumables)
                 .OnDelete(DeleteBehavior.ClientSetNull)
@@ -127,9 +129,14 @@ public partial class SMContext : DbContext
 
         modelBuilder.Entity<User>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Users__3213E83F8D48FA7B");
+            entity.HasKey(e => e.Id).HasName("PK__Users__3213E83F162C9056");
 
             entity.Property(e => e.Id).HasDefaultValueSql("(newid())");
+        });
+
+        modelBuilder.Entity<VBookingStatistic>(entity =>
+        {
+            entity.ToView("vBookingStatistic");
         });
 
         OnModelCreatingPartial(modelBuilder);

@@ -1,4 +1,4 @@
-import {BookingRepository} from "/DataLayer/Repository/BookingRepository.js"
+import {BookingRepository} from "../../DataLayer/Repository/BookingRepository.js"
 
 export class BookingService
 {

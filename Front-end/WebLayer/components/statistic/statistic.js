@@ -1,146 +1,128 @@
-import {Components} from "../../utilities/Components.js";
-import {GetParameter} from "../../utilities/GetUrlParam.js";
-import { SortTableColumn } from "../../utilities/TableSorting.js";
-import { DateBg } from "../../utilities/DateFormat.js";
-import { SpaceController } from "../../Controllers/SpaceController.js";
+import { Components } from "../../utilities/Components.js";
 import { checkCookieExists } from "../../utilities/checkCookie.js";
+import { StatisticController } from "../../Controllers/StatisticController.js";
+import { SpaceController } from "../../Controllers/SpaceController.js";
+import { displayPrompt } from "../../utilities/Prompt.js";
 await checkCookieExists("SMPlace");
 Components("statistic");
+const statisticController = new StatisticController();
 const spaceController = new SpaceController();
-const spaceId = GetParameter("id");
 
-function DisplayContent(space)
-{
-  document.querySelector(".details-bookings") ? document.querySelector(".details-bookings").innerHTML = "" : "";
-  document.querySelector(".details-consumables") ? document.querySelector(".details-consumables").innerHTML = "" : "";
+const emptyBookingData = {
+    labels: ['Януари', 'Февруари', 'Март', 'Април', 'Май', 'Юни', 'Юли', 'Август', 'Септември', 'Октомври', 'Ноември', 'Декември'],
+    values: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+};
 
+// Initialize the chart when the page loads
+let bookingChart; // Declare bookingChart in a broader scope
 
-  const namePlaceholder = document.querySelector(".details-name");
-  const sizePlaceholder = document.querySelector(".details-size");
-  const volumePlaceholder = document.querySelector(".details-volume");
-  const descriptionPlaceholder = document.querySelector(".details-description");
-  const consumablesPlaceholder = document.querySelector(".details-consumables");
-  const bookingsPlaceholder = document.querySelector(".details-bookings");
-
-  if(!space.bookings.length){
-    document.querySelector(".bookings").remove();
-  }
-  if(!space.spaceConsumables){
-    document.querySelector(".consumables").remove();
-  }
-
-  namePlaceholder.innerText = space.name;
-  sizePlaceholder.innerHTML = `${space.size} м&sup2;`;
-  volumePlaceholder.innerHTML = `${space.volume} м&sup3;`;
-  if(document.querySelector(".description")){
-    space.description ? descriptionPlaceholder.innerText = space.description : document.querySelector(".description").remove();
-  }
-  if(space.spaceConsumables.length === 0)
-  {
-    document.querySelector(".consumables")?document.querySelector(".consumables").remove():"";
-  }
-  else
-  {
-    space.spaceConsumables.map(spaceConsumables=>{
-      consumablesPlaceholder.innerHTML+=
-      `<tr>
-        <td>${spaceConsumables.consumables.name}</td>
-        <td>${spaceConsumables.count}</td>
-      </tr>`
-    });   
-  }
-  if(space.bookings.length!==0)
-  {
-    space.bookings.map(booking=>{
-      bookingsPlaceholder.innerHTML+=
-      `<tr>
-        <td>${DateBg(booking.startDate)}</td>
-        <td>${DateBg(booking.endDate)}</td>
-        <td>${booking.price} лв.</td>
-        <td>${booking.clientName}</td>
-      </tr>`
+function initializeChart(chartData) {
+    const ctx = document.getElementById('bookingChart').getContext('2d');
+    if (bookingChart) {
+        bookingChart.destroy(); // Destroy existing chart instance if it exists
+    }
+    bookingChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: chartData.labels,
+            datasets: [{
+                label: 'Брой заети дни',
+                data: chartData.values,
+                backgroundColor: '#023E8A',
+                borderColor: '#388E3C',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true,
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            },
+            plugins: {
+                legend: {
+                    position: 'bottom',
+                }
+            }
+        }
     });
-  }
 }
 
-window.addEventListener('load',async ()=>
-{
-    document.querySelector(".loader").remove();
-    document.querySelector(".blur").classList.remove('blur');
+window.addEventListener('load', async () => {
     Years();
-    let response = await spaceController.GetSpace(spaceId);
-    let space = response.dto;
-    DisplayContent(space);
-    if(space.bookings.length !== 0){
-    AddSorting(space);
-    }
-
+    await GetSpaces();
+    document.querySelector(".loader").style.display = 'none';
+    document.querySelector(".blur").classList.remove('blur');
 });
 
-document.querySelector('.back').addEventListener('click', ()=>
-{
-  window.history.back();
-})
+// Add this after the window.addEventListener('load') block
+document.addEventListener('DOMContentLoaded', function () {
 
+    const getStatisticBtn = document.getElementById('get-statistic-btn');
+    if (getStatisticBtn) {
+        getStatisticBtn.addEventListener('click', getStatistic);
+    }
+});
 
-function AddSorting(array) {
+// Also fix the getStatistic function by adding async keyword
+async function getStatistic() {
+    document.querySelector(".loader").style.display = 'block';
 
-  let sortStartDate = document.querySelector(".startDate-sort");
-  let sortEndDate = document.querySelector(".endDate-sort");
-  let sortPrice = document.querySelector(".price-sort");
-  let sortName = document.querySelector(".clientName-sort");
+    const year = document.getElementById('year-select').value;
+    const spaceId = document.getElementById('space-select').value;
+    if (!year) {
+        displayPrompt(".prompt-save", "Моля, изберете година.", false);
+        return;
+    }
+    if (!spaceId) {
+        displayPrompt(".prompt-save", "Моля, изберете помещение.", false);
+        return;
+    }
+    try {
+        const statisticData = await statisticController.GetStatistic(spaceId, year);
+        if (statisticData && statisticData.labels && statisticData.values) {
+            if (statisticData.values.every(value => value === 0)) {
+                displayPrompt(".prompt-save", "Няма данни в системата за резервации в избранта година за това помещение", false);
+            }
+            else {
+                document.querySelector('h2').removeAttribute('hidden');
+                initializeChart(statisticData);
+            }
+        } else {
+            initializeChart(emptyBookingData);
+        }
+        document.querySelector(".loader").style.display = 'none';
 
-  sortStartDate.remove();
-  sortEndDate.remove();
-  sortPrice.remove();
-  sortName.remove();
+    } catch (error) {
+        console.error("Error fetching statistic data:", error);
+        document.querySelector(".loader").style.display = 'none';
 
-  document.querySelector(".tb-sd").innerHTML+=`<span class="material-symbols-outlined startDate-sort ascending active">arrow_drop_down</span>`;
-  document.querySelector(".tb-ed").innerHTML+=`<span class="material-symbols-outlined endDate-sort ascending">arrow_drop_down</span>`;
-  document.querySelector(".tb-p").innerHTML+=`<span class="material-symbols-outlined price-sort ascending">arrow_drop_down</span>`;
-  document.querySelector(".tb-c").innerHTML+=`<span class="material-symbols-outlined clientName-sort ascending">arrow_drop_down</span>`;
-
-  sortStartDate = document.querySelector(".startDate-sort");
-  sortEndDate = document.querySelector(".endDate-sort");
-  sortPrice = document.querySelector(".price-sort");
-  sortName = document.querySelector(".clientName-sort");
-
-  sortStartDate.addEventListener("click", sortStartDateHandler);
-  sortEndDate.addEventListener("click", sortEndDateHandler);
-  sortPrice.addEventListener("click", sortPriceHandler);
-  sortName.addEventListener("click", sortNameHandler);
-
-  function sortStartDateHandler() {
-    SortTableColumn(array.bookings, "startDate", "date");
-    DisplayContent(array);
-  };
-
-  function sortEndDateHandler() {
-    SortTableColumn(array.bookings, "endDate", "date");
-    DisplayContent(array);
-  };
-  
-  function sortPriceHandler() {
-    SortTableColumn(array.bookings, "price", "numeric");
-    DisplayContent(array);
-  };
-
-  function sortNameHandler() {
-    SortTableColumn(array.bookings, "clientName", "alphabetic");
-    DisplayContent(array);
-  };
+    }
 }
+
 
 function Years() {
 
-    const startYear = 1970;
-    const endYear = new Date().getFullYear();
+    const currentYear = new Date().getFullYear();
     const yearSelect = document.getElementById('year-select');
 
-    for (let year = startYear; year <= endYear; year++) {
+    for (let year = currentYear - 10; year <= currentYear + 10; year++) {
         const option = document.createElement('option');
         option.value = year;
         option.textContent = year;
         yearSelect.appendChild(option);
+    }
+}
+
+async function GetSpaces() {
+    let response = await spaceController.GetAllSpaces(true);
+    let spaceNames = response.map(({ id, name }) => ({ id, name }));
+
+    for (let space of spaceNames) {
+        let option = document.createElement('option');
+        option.value = space.id;
+        option.textContent = space.name;
+        document.getElementById('space-select').appendChild(option);
     }
 }

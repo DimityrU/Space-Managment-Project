@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <link rel="stylesheet" href="../../assets/styles/styles.css"/>
-    <link rel="stylesheet" href="./statistic.css"/>
-    <link rel="icon" type="image/x-icon" href="../../assets/images/icons8-building-16.png" />
+
+    <link rel="stylesheet" href="../../assets/styles/styles.css" />
+    <link rel="stylesheet" href="./statistic.css" />
+    <link rel="icon" type="image/x-icon" href="../../assets/images/stat.png" />
     <title></title>
 </head>
-<body >
+
+<body>
     <div class="details-container blur">
         <h1 class="details-name column-2">Статистика</h1>
-        
+
         <div class="filter-container">
             <div class="filter-item">
                 <label for="year-select">Изберете година:</label>
@@ -21,72 +23,40 @@
                     <option value="" disabled selected>Изберете година</option>
                 </select>
             </div>
-            
+
             <div class="filter-item">
-                <label for="year-select">Изберете помещение:</label>
-                <select id="year-select" class="year-dropdown">
+                <label for="space-select">Изберете помещение:</label>
+                <select id="space-select" class="space-dropdown">
                     <option value="" disabled selected>Изберете помещение</option>
                 </select>
             </div>
-            
-            <button id="get-statistic-btn" class="stat-button btn-custom" onclick="getStatistic()">Вземи статистика</button>
+
+            <button id="get-statistic-btn" class="stat-button btn-custom">Вземи статистика</button>
         </div>
 
 
         <div class="statistics-container">
-            <h2>Заетост по месеци</h2>
+            <h2 hidden>Заетост по месеци</h2>
+
             <div class="chart-container">
-            <canvas id="bookingChart"></canvas>
+                <canvas id="bookingChart"></canvas>
             </div>
             <div class="chart-legend">
-            <div class="legend-item"></div>
+                <div class="legend-item"></div>
                 <span class="legend-color" style="background-color: #023E8A;"></span>
             </div>
         </div>
 
         <script>
             // Example data - will be replaced with real data from API
-            const exampleBookingData = {
-            labels: ['Януари', 'Февруари', 'Март', 'Април', 'Май', 'Юни', 'Юли', 'Август', 'Септември', 'Октомври', 'Ноември', 'Декември'],
-            values: [5, 12, 8, 15, 10, 31, 18, 7, 11, 9, 14, 6]
-            };
 
-            // Initialize the chart when the page loads
-            document.addEventListener('DOMContentLoaded', function() {
-            const ctx = document.getElementById('bookingChart').getContext('2d');
-            const bookingChart = new Chart(ctx, {
-                type: 'bar',
-                data: {
-                labels: exampleBookingData.labels,
-                datasets: [{
-                    label: 'Брой заети дни',
-                    data: exampleBookingData.values,
-                    backgroundColor: '#023E8A',
-                    borderColor: '#388E3C',
-                    borderWidth: 1
-                }]
-                },
-                options: {
-                responsive: true,
-                scales: {
-                    y: {
-                    beginAtZero: true
-                    }
-                },
-                plugins: {
-                    legend: {
-                    position: 'bottom',
-                    }
-                }
-                }
-            });
-            });
         </script>
     </div>
     <div class="loader"></div>
     <div class="prompt-save"></div>
-<script type="module" src="./statistic.js" defer></script>
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script type="module" src="./statistic.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 </body>
+
 </html>

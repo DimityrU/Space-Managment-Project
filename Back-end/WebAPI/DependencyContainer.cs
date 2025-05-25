@@ -15,6 +15,9 @@ public static class DependencyContainer
         // Space repositories
         services.AddScoped<IRepository<Space>, Repository<Space>>();
         services.AddScoped<ISpaceRepository, SpaceRepository>();
+        services.AddScoped<IStatisticRepository, StatisticRepository>();
+        services.AddScoped<IStatisticService, StatisticService>();
+
 
         // Consumable repositories
         services.AddScoped<IRepository<Consumable>, Repository<Consumable>>();

@@ -1,69 +1,81 @@
 ﻿{
-  "CodeGenerationMode": 3,
-  "ContextClassName": "SMContext",
-  "ContextNamespace": null,
-  "DefaultDacpacSchema": null,
-  "FilterSchemas": false,
-  "IncludeConnectionString": true,
-  "ModelNamespace": null,
-  "OutputContextPath": null,
-  "OutputPath": "Entities",
-  "PreserveCasingWithRegex": true,
-  "ProjectRootNamespace": "DataLayer",
-  "Schemas": null,
-  "SelectedHandlebarsLanguage": 0,
-  "SelectedToBeGenerated": 0,
-  "Tables": [
-    {
-      "Name": "[dbo].[Bookings]",
-      "ObjectType": 0
-    },
-    {
-      "Name": "[dbo].[Clients]",
-      "ObjectType": 0
-    },
-    {
-      "Name": "[dbo].[Consumables]",
-      "ObjectType": 0
-    },
-    {
-      "Name": "[dbo].[Invoice_consumables]",
-      "ObjectType": 0
-    },
-    {
-      "Name": "[dbo].[Invoices]",
-      "ObjectType": 0
-    },
-    {
-      "Name": "[dbo].[Space_consumables]",
-      "ObjectType": 0
-    },
-    {
-      "Name": "[dbo].[Spaces]",
-      "ObjectType": 0
-    },
-    {
-      "Name": "[dbo].[Users]",
-      "ObjectType": 0
-    }
-  ],
-  "UiHint": "ec2amaz-r6tc58c.SM.dbo",
-  "UncountableWords": null,
-  "UseBoolPropertiesWithoutDefaultSql": false,
-  "UseDatabaseNames": false,
-  "UseDateOnlyTimeOnly": false,
-  "UseDbContextSplitting": false,
-  "UseFluentApiOnly": false,
-  "UseHandleBars": false,
-  "UseHierarchyId": false,
-  "UseInflector": true,
-  "UseLegacyPluralizer": false,
-  "UseManyToManyEntity": false,
-  "UseNoDefaultConstructor": false,
-  "UseNoObjectFilter": false,
-  "UseNodaTime": false,
-  "UseNullableReferences": false,
-  "UseSchemaFolders": false,
-  "UseSpatial": false,
-  "UseT4": false
+   "CodeGenerationMode": 4,
+   "ContextClassName": "SMContext",
+   "ContextNamespace": null,
+   "FilterSchemas": false,
+   "IncludeConnectionString": true,
+   "ModelNamespace": null,
+   "OutputContextPath": null,
+   "OutputPath": "Entities",
+   "PreserveCasingWithRegex": true,
+   "ProjectRootNamespace": "DataLayer",
+   "Schemas": null,
+   "SelectedHandlebarsLanguage": 0,
+   "SelectedToBeGenerated": 0,
+   "T4TemplatePath": null,
+   "Tables": [
+      {
+         "Name": "[dbo].[Bookings]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Clients]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Consumables]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Invoice_consumables]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Invoices]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Space_consumables]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Spaces]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Users]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[vBookingStatistic]",
+         "ObjectType": 3
+      }
+   ],
+   "UiHint": null,
+   "UncountableWords": null,
+   "UseAsyncStoredProcedureCalls": true,
+   "UseBoolPropertiesWithoutDefaultSql": false,
+   "UseDatabaseNames": false,
+   "UseDatabaseNamesForRoutines": true,
+   "UseDateOnlyTimeOnly": false,
+   "UseDbContextSplitting": false,
+   "UseDecimalDataAnnotationForSprocResult": true,
+   "UseFluentApiOnly": false,
+   "UseHandleBars": false,
+   "UseHierarchyId": false,
+   "UseInflector": true,
+   "UseInternalAccessModifiersForSprocsAndFunctions": false,
+   "UseLegacyPluralizer": false,
+   "UseManyToManyEntity": false,
+   "UseNoDefaultConstructor": false,
+   "UseNoNavigations": false,
+   "UseNoObjectFilter": false,
+   "UseNodaTime": false,
+   "UseNullableReferences": false,
+   "UsePrefixNavigationNaming": false,
+   "UseSchemaFolders": false,
+   "UseSchemaNamespaces": false,
+   "UseSpatial": false,
+   "UseT4": false,
+   "UseT4Split": false
 }

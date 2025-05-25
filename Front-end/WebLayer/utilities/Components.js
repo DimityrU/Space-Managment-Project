@@ -51,12 +51,12 @@ export function Components(selected) {
 
     let navbar = document.createElement("nav");
     navbar.classList.add("navbar");
-    navbar.innerHTML = `<img class="logo" src="/WebLayer/assets/images/logo.svg" />
+    navbar.innerHTML = `<img class="logo" src="/WebLayer/assets/images/logo.png" />
     <ul>
       ${adminFunctionalities}
       <li id="statistic" class="navbar-item dropdown">
       <a href="/WebLayer/components/statistic/statistic.html">
-        <span class="material-symbols-outlined"> person </span>
+        <span class="material-symbols-outlined"> monitoring </span>
         <div>
           <p>Статистика</p>
         </div>

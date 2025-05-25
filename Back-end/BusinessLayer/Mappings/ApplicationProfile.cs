@@ -11,6 +11,8 @@ public class ApplicationProfile : Profile
 {
     public ApplicationProfile()
     {
+        CreateMap<VBookingStatistic, StatisticDTO>();
+
         // source --> destination
         CreateMap<Space, SpaceDTO>().ReverseMap();
         CreateMap<Consumable, ConsumableDTO>().ReverseMap();

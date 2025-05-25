@@ -4,3 +4,6 @@ services:
     build:
       context: .
       dockerfile: WebAPI/Dockerfile
+    ports:
+      - "7285:8080"
+      - "7286:8081"
