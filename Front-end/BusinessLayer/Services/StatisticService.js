@@ -1,6 +1,7 @@
 import { StatisticRepository } from "../../DataLayer/Repository/StatisticRepository.js";
 import { StatisticMapper } from "../../BusinessLayer/Mappers/StatisticMapper.js";
 import { displayPrompt } from "../../WebLayer/utilities/Prompt.js";
+import { StatisticDTO } from "../Models/StatisticDTO.js";
 
 export class StatisticService {
   constructor() {
@@ -16,9 +17,9 @@ export class StatisticService {
       return;
     }
 
-    var result = this.statisticMapper.MapStatistic(response.statistic);
+    var statisiticResult = this.statisticMapper.MapStatistic(response.statistic);
 
-    return result;
+    return new StatisticDTO(statisiticResult, response.invoiceStatus.paid, response.invoiceStatus.unpaid);
   }
 
 }

@@ -3,7 +3,7 @@
    "ContextClassName": "SMContext",
    "ContextNamespace": null,
    "FilterSchemas": false,
-   "IncludeConnectionString": true,
+   "IncludeConnectionString": false,
    "ModelNamespace": null,
    "OutputContextPath": null,
    "OutputPath": "Entities",
@@ -49,6 +49,10 @@
       {
          "Name": "[dbo].[vBookingStatistic]",
          "ObjectType": 3
+      },
+      {
+         "Name": "[dbo].[GetInvoiceSumsBySpaceAndYear]",
+         "ObjectType": 1
       }
    ],
    "UiHint": null,

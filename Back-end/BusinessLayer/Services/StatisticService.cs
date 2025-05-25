@@ -11,7 +11,7 @@ using Models;
 using System;
 using System.Threading.Tasks;
 
-public class StatisticService(IStatisticRepository statisticRepository, IMapper mapper) : IStatisticService
+public class StatisticService(IStatisticRepository statisticRepository,IInvoiceRepository invoiceRepository, IMapper mapper) : IStatisticService
 {
 
     public async Task<GetStatisticResponse> GetStatistic(Guid spaceId, int year)
@@ -21,6 +21,10 @@ public class StatisticService(IStatisticRepository statisticRepository, IMapper 
         var result = await statisticRepository.GetReservationDates(spaceId, year);
 
         response.Statistic = mapper.Map<List<StatisticDTO>>(result);
+
+        var paidResult = await invoiceRepository.GetPaymentsStatus(spaceId, year);
+
+        response.InvoiceStatus = new InvoiceStatus(paidResult.Item1, paidResult.Item2);
 
         return response;
     }

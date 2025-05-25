@@ -6,4 +6,6 @@ using Models;
 public class GetStatisticResponse : BaseResponse
 {
     public IEnumerable<StatisticDTO> Statistic { get; set; } 
+
+    public InvoiceStatus InvoiceStatus { get; set; }
 }

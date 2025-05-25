@@ -32,4 +32,14 @@ public class InvoiceRepository : Repository<Invoice>, IInvoiceRepository
 
         return invoice;
     }
+
+    public async Task<Tuple<decimal, decimal>> GetPaymentsStatus(Guid spaceId, int year)
+    {
+        var paidSum = new OutputParameter<decimal?>();
+        var unpaidSum = new OutputParameter<decimal?>();
+
+        await Context.GetProcedures().GetInvoiceSumsBySpaceAndYearAsync(spaceId, year, paidSum, unpaidSum);
+
+        return Tuple.Create(paidSum.Value ?? 0, unpaidSum.Value ?? 0);
+    }
 }

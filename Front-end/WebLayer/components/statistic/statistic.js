@@ -81,13 +81,21 @@ async function getStatistic() {
     }
     try {
         const statisticData = await statisticController.GetStatistic(spaceId, year);
-        if (statisticData && statisticData.labels && statisticData.values) {
-            if (statisticData.values.every(value => value === 0)) {
+        if (statisticData.statistic && statisticData.statistic.labels && statisticData.statistic.values) {
+            if (statisticData.statistic.values.every(value => value === 0)) {
+                document.querySelector('h2').setAttribute('hidden', '');
+                document.querySelector('.chart-summary').setAttribute('hidden', '');
+                document.querySelector('.chart-container').setAttribute('hidden', '');
                 displayPrompt(".prompt-save", "Няма данни в системата за резервации в избранта година за това помещение", false);
+
             }
             else {
                 document.querySelector('h2').removeAttribute('hidden');
-                initializeChart(statisticData);
+                initializeChart(statisticData.statistic);
+                document.querySelector('.chart-summary').removeAttribute('hidden');
+                document.querySelector('.chart-container').removeAttribute('hidden');
+                document.getElementById('paid-amount').innerText = statisticData.paid + " лв.";
+                document.getElementById('unpaid-amount').innerText = statisticData.unpaid + " лв.";
             }
         } else {
             initializeChart(emptyBookingData);
